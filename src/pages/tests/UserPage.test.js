@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import { store } from "../../redux/store";
 import { theme } from "../../styleConfig/theme";
-import User, { getServerSideProps } from "../users/[userLogin]";
+import User, { getServerSideProps } from "../../pages/users/[userLogin]";
 
 const testUser = {
   avatar_url: "https://avatars.githubusercontent.com/u/2738851?v=4",
