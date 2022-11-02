@@ -6,7 +6,7 @@ import { theme } from "../../styleConfig/theme";
 import Home from "../index";
 import { store } from "../../redux/store";
 
-describe("Home", () => {
+describe("Home page", () => {
   it("Home renders", () => {
     render(
       <ThemeProvider theme={theme}>
@@ -16,5 +16,8 @@ describe("Home", () => {
       </ThemeProvider>
     );
     expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText("input to search Github users")
+    ).toBeInTheDocument();
   });
 });
