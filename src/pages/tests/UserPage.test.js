@@ -1,6 +1,4 @@
-import { userEvent } from "@testing-library/user-event";
 import { render } from "@testing-library/react";
-import { useRouter } from "next/router";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
@@ -43,7 +41,7 @@ const testUser = {
   url: "https://api.github.com/users/fg",
 };
 
-describe("getServerSideProps", () => {
+describe("getServerSideProps()", () => {
   window.fetch = jest.fn(() =>
     Promise.resolve({
       json: () => Promise.resolve(testUser),

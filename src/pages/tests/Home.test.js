@@ -6,8 +6,8 @@ import { theme } from "../../styleConfig/theme";
 import Home from "../index";
 import { store } from "../../redux/store";
 
-describe("Home page", () => {
-  it("home renders", () => {
+describe("Home", () => {
+  it("Home renders", () => {
     render(
       <ThemeProvider theme={theme}>
         <Provider store={store}>
