@@ -3,7 +3,16 @@ module.exports = {
     config,
     { webpack, buildId, dev, isServer, defaultLoaders, nextRuntime }
   ) => {
-    config.plugins.push(new webpack.IgnorePlugin(/\/tests\//));
+    config.module.rules.push({
+      test: /\.mdx/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: "@mdx-js/loader",
+          options: pluginOptions.options,
+        },
+      ],
+    });
     return config;
   },
 };
