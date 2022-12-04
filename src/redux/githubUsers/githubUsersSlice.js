@@ -9,7 +9,7 @@ export const usersSlice = createSlice({
     },
     deleteItem: (state, action) => {
       return {
-        items: state.items.filter((user) => user.userLogin !== action.payload),
+        items: state.items.filter((user) => user.login !== action.payload),
       };
     },
   },

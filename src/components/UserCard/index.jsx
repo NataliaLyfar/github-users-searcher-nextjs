@@ -15,15 +15,15 @@ export const UserCard = ({
   avatar_url,
   public_repos,
   html_url,
+  bio,
 }) => {
   const items = useSelector(getItemsValue);
   const dispatch = useDispatch();
 
-  const isFavorited = items?.map((item) => item.userLogin).includes(login);
+  const isFavorited = items?.map((item) => item.login).includes(login);
 
   const handleAdd = () => {
-    if (!isFavorited)
-      dispatch(addItem({ avatar_url, userLogin: login, html_url }));
+    if (!isFavorited) dispatch(addItem({ avatar_url, login, html_url }));
   };
 
   return (
@@ -35,6 +35,11 @@ export const UserCard = ({
         <HeartOutlined />
       </StyledButton>
       {name && <Title level={3}>{name}</Title>}
+      {bio && (
+        <Paragraph>
+          <Text strong>Bio:</Text> {bio}
+        </Paragraph>
+      )}
       <Paragraph>
         <Text strong>Login:</Text> {login}
       </Paragraph>

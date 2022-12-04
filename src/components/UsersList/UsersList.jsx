@@ -39,14 +39,14 @@ export const UsersList = () => {
     },
     {
       title: "User",
-      dataIndex: "userLogin",
-      key: "userLogin",
+      dataIndex: "login",
+      key: "login",
       render: (text) => (
         <Link href={`/users/${text}`}>
           <Typography.Text copyable>{text}</Typography.Text>
         </Link>
       ),
-      sorter: (a, b) => a.userLogin.length - b.userLogin.length,
+      sorter: (a, b) => a.login.length - b.login.length,
     },
     {
       title: "Type",
@@ -91,7 +91,6 @@ export const UsersList = () => {
               <Table
                 dataSource={partialUsers?.map((item) => ({
                   ...item,
-                  userLogin: item.login,
                   key: item.id,
                 }))}
                 columns={columns}

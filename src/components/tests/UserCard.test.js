@@ -24,6 +24,7 @@ describe("UserCard", () => {
           followers={2}
           following={12}
           public_repos={40}
+          bio={null}
         />
       </ThemeProvider>
     );
@@ -44,6 +45,7 @@ describe("UserCard", () => {
           following={12}
           public_repos={40}
           isFavorited={false}
+          bio={null}
         />
       );
 

@@ -23,14 +23,14 @@ export const FavoriteList = () => {
     },
     {
       title: "User",
-      dataIndex: "userLogin",
-      key: "userLogin",
+      dataIndex: "login",
+      key: "login",
       render: (text) => (
         <Link href={`/users/${text}`}>
           <Typography.Text copyable>{text}</Typography.Text>
         </Link>
       ),
-      sorter: (a, b) => a.userLogin.length - b.userLogin.length,
+      sorter: (a, b) => a.login.length - b.login.length,
     },
     {
       title: "Repo url",
@@ -50,7 +50,7 @@ export const FavoriteList = () => {
         items.length >= 1 ? (
           <Popconfirm
             title="Sure to delete?"
-            onConfirm={() => handleDelete(record.userLogin)}
+            onConfirm={() => handleDelete(record.login)}
           >
             <Button type="link">Delete</Button>
           </Popconfirm>
@@ -61,7 +61,6 @@ export const FavoriteList = () => {
   const handleDelete = (login) => {
     dispatch(deleteItem(login));
   };
-
   return (
     <>
       {items?.length > 0 && (
@@ -72,7 +71,7 @@ export const FavoriteList = () => {
               <Table
                 dataSource={items?.map((item) => ({
                   ...item,
-                  key: item.userLogin,
+                  key: item.login,
                 }))}
                 columns={favoriteColumns}
                 pagination={{

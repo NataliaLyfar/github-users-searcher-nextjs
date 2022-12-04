@@ -9,9 +9,9 @@ import { BASE_URL } from "../../constants";
 import axios from "axios";
 
 export const getServerSideProps = async (context) => {
-  const { userLogin } = context.params;
+  const { login } = context.params;
   try {
-    const { data } = await axios.get(`${BASE_URL}users/${userLogin}`);
+    const { data } = await axios.get(`${BASE_URL}users/${login}`);
     return {
       props: { user: data },
     };
@@ -24,12 +24,11 @@ export const getServerSideProps = async (context) => {
 
 const User = ({ user }) => {
   const router = useRouter();
-  const { userLogin } = router.query;
-
+  const { login } = router.query;
   return (
     <>
       <Head>
-        <title>User: {userLogin}</title>
+        <title>User: {login}</title>
       </Head>
       <main>
         <Container>
